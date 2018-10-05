@@ -8,7 +8,9 @@ require 'pry'
 # }
 
 def select_winner(passengers)
-  passengers.each{|s,p| winner = p if s == :suite_a && p.start_with?("A") }
-  winner
-  binding.pry
+  passengers.each do |s,p|
+    if s == :suite_a && p.start_with?("A")
+      winner = p
+    end
+  end
 end
